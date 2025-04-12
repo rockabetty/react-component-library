@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import '../design/style.css';
 import './Tag.css';
 import { Badge } from '../Button';
-import { InteractiveProps, InteractiveDefaults } from '../types/interactive'
+import { InteractiveProps } from '../types/interactive'
 
 
 export interface TagProps extends InteractiveProps {
