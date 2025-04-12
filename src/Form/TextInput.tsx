@@ -1,5 +1,5 @@
 import React from 'react'
-import WriteInField, {WriteInFieldProps, writeInDefaults} from './atoms/WriteInField'
+import WriteInField, {WriteInFieldProps} from './atoms/WriteInField'
 
 const TextInput: React.FC<WriteInFieldProps> = (props) => {
   const {type} = props

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { InputProps, InputDefaults } from '../../types/input'
+import { InputProps } from '../../types/input'
 import classNames from 'classnames'
 import '../../design/style.css'
 import { default as Label } from './Label';

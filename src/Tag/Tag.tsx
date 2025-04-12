@@ -44,16 +44,6 @@ export interface TagProps extends InteractiveProps {
     | 'match text';
 };
 
-export const TagDefaults: TagProps = {
-  ...InteractiveDefaults,
-  label: '',
-  size: 'md',
-  onClose: () => {},
-  removable: false,
-  icon: '',
-  look: 'neutral',
-} as TagProps
-
 const Tag:React.FC<TagProps> = (props) => {
   const {
     id,
