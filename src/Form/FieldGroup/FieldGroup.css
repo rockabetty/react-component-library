@@ -1,0 +1,23 @@
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.field-group.Inline {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.field-group.Gap-sm { gap: var(--spacing-sm); }
+.field-group.Gap-md { gap: var(--spacing-md); }
+.field-group.Gap-lg { gap: var(--spacing-lg); }
+
+
+@media (max-width: 576px) {
+  .field-group.Inline {
+    flex-direction: column; /* Stack by default on mobile */
+    gap: var(--spacing-md);
+  }
+}

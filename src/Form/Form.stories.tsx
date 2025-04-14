@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Form from './Form';
 import TextInput from './TextInput';
 import Checkbox from './Checkbox/Checkbox';
+import FieldGroup from './FieldGroup/FieldGroup';
 
 export default {
   title: 'Form Components/Form',
