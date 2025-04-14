@@ -130,7 +130,6 @@ legend, .legend {
 .form-field_helpertext {
   color: var(--col-text-secondary);
   font-size: var(--size-font-sm);
-  font-weight: 700;
   letter-spacing: 0.5px;
   margin-top: var(--spacing-xs);
   margin-bottom: 0;

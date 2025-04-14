@@ -42,4 +42,8 @@ export interface InputProps extends InteractiveProps {
     */
     required?: boolean;
     value?: "checked" | string | number;
+    /**
+    * Provide placeholder text for when no value is set. 
+    */
+    placeholderText?: string
 }

@@ -5,7 +5,7 @@ import TextInput from './TextInput';
 import Checkbox from './Checkbox/Checkbox';
 
 export default {
-  title: 'Components/Form',
+  title: 'Form Components/Form',
   component: Form,
   parameters: {
     layout: 'centered',

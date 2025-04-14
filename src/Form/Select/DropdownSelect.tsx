@@ -14,13 +14,13 @@ type Option = {
 }
 
 export interface SelectProps extends InputProps {
-  options: Option[]
-  multiple?: boolean
+  options: Option[];
+  multiple?: boolean;
 }
 
 const DropdownSelect = (props: SelectProps) => {
 
-  const {status, disabled, id, name, onChange, tabIndex, value, labelText, options, helperText, errorText, multiple} = props;
+  const {status, placeholderText, disabled, id, name, onChange, tabIndex, value, labelText, options, helperText, errorText, multiple} = props;
   
   return(
     <FormField
@@ -42,7 +42,11 @@ const DropdownSelect = (props: SelectProps) => {
         onChange={onChange}
         tabIndex={tabIndex}
         value={value}
+        multiple={multiple}
       >
+        {placeholderText && (
+          <option disabled value="">{placeholderText}</option>
+        )}
         {options.map((option, idx) => {
           return (
             <option
@@ -56,7 +60,7 @@ const DropdownSelect = (props: SelectProps) => {
         })}
       </select>
       { helperText || status === 'error' ?
-        <p className="checkbox_helpertext">
+        <p className="form-field_helpertext">
           {status === 'error' ? errorText : helperText }
         </p>
         :
