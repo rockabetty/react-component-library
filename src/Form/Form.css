@@ -155,3 +155,10 @@ legend, .legend {
 .form-feedback.Error {
   color: var(--col-error);
 }
+
+.FieldWidth-xs { width: var(--field-width-4x); max-width: 100%; }  /* Good for zip codes, short codes */
+.FieldWidth-sm { width: var(--field-width-8x); max-width: 100%; }  /* Good for states, countries */
+.FieldWidth-md { width: var(--field-width-12x); max-width: 100%; } /* Decent default */
+.FieldWidth-lg { width: var(--field-width-16x); max-width: 100%; } /* Names, emails */
+.FieldWidth-xl { width: var(--field-width-24x); max-width: 100%; } /* Addresses */
+.FieldWidth-full { width: 100%; }

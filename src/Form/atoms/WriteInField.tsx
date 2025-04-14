@@ -6,6 +6,9 @@ import { default as Label } from './Label';
 import { default as FormField } from './FormField';
 import { useValidation } from '../hooks/useValidation'; 
 
+
+type WidthSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full';
+
 export interface WriteInFieldProps extends InputProps {  
   /**
    * Add placeholder text to provide an example input value.
@@ -43,6 +46,10 @@ export interface WriteInFieldProps extends InputProps {
    * Give the user feedback on why their input is wrong
    */ 
   errorText?: string;
+  /*
+  * Specify the visual width of a given field
+  */
+  size?: WidthSize
 }
 
 const WriteInField: React.FC<WriteInFieldProps> = (props) => {
@@ -63,9 +70,10 @@ const WriteInField: React.FC<WriteInFieldProps> = (props) => {
     placeholderText = "",
     helperText = "",
     errorText = "",
-    classes,
     required,
-    value
+    value,
+    classes,
+    size
   } = props
 
   const { valid, error, validate } = useValidation({
@@ -137,7 +145,8 @@ const WriteInField: React.FC<WriteInFieldProps> = (props) => {
       classes={classNames({
         'Disabled': disabled,
         'Error': error || errorText,
-        'Valid': !errorText && valid
+        'Valid': !errorText && valid,
+        [`FieldWidth-${size || 'full'}`]: true
       })}
     >
       <Label

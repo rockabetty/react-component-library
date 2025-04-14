@@ -100,6 +100,13 @@
   --size-border-radius: var(--border-radius, var(--spacing-xs));
   --size-border-width: var(--border-width, 1px);
 
+  --field-width-2x: calc(var(--base-size) * 2);  /* ~2.32rem */
+  --field-width-4x: calc(var(--base-size) * 4);  /* ~4.64rem */
+  --field-width-8x: calc(var(--base-size) * 8);  /* ~9.28rem */
+  --field-width-12x: calc(var(--base-size) * 12); /* ~13.92rem */
+  --field-width-16x: calc(var(--base-size) * 16); /* ~18.56rem */
+  --field-width-24x: calc(var(--base-size) * 24); /* ~27.84rem */
+
   --theme-interface-00: var(--color-interface-00, var(--swatch-white));
   --theme-interface-10: var(--color-interface-10, var(--swatch-gray-10));
   --theme-interface-20: var(--color-interface-20, var(--swatch-gray-20));
