@@ -102,6 +102,7 @@ const WriteInField: React.FC<WriteInFieldProps> = (props) => {
   const handleChange = type === 'textarea' ? textAreaChangeHandler : inputChangeHandler;
 
   const inputProps = {
+    className: 'form-field_control',
     value,
     disabled,
     id,
