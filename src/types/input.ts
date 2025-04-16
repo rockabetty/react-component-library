@@ -54,4 +54,8 @@ export interface InputProps extends InteractiveProps {
     * Give the user feedback on why their input is wrong
     */ 
     errorText?: string;
+    /**
+    * Control the appearance of an input based on validity
+    */
+    status?: "valid" | "error"
 }

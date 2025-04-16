@@ -63,8 +63,7 @@ const WriteInField: React.FC<WriteInFieldProps> = (props) => {
     errorText = "",
     required,
     value,
-    classes,
-    size
+    size,
   } = props
 
   const { valid, error, validate } = useValidation({
@@ -103,7 +102,6 @@ const WriteInField: React.FC<WriteInFieldProps> = (props) => {
   const handleChange = type === 'textarea' ? textAreaChangeHandler : inputChangeHandler;
 
   const inputProps = {
-    className: `form-field_control ${classes}`.trim(),
     value,
     disabled,
     id,
