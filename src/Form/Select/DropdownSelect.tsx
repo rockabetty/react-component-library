@@ -43,7 +43,7 @@ const DropdownSelect = (props: SelectProps) => {
       classes={classNames({
         'Compact': true,
         'Disabled': disabled,
-        'Error': status === 'error'
+        'Error': status === 'error',
         [`FieldWidth-${size || 'full'}`]: true
       })}
     >
