@@ -6,8 +6,7 @@ import { default as Label } from './Label';
 import { default as FormField } from './FormField';
 import { useValidation } from '../hooks/useValidation'; 
 
-
-type WidthSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full';
+export type WidthSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'full';
 
 export interface WriteInFieldProps extends InputProps {  
   /**
@@ -38,14 +37,6 @@ export interface WriteInFieldProps extends InputProps {
   * Restrict valid input
   */
   pattern?: string;
-  /**
-   * Give the user information to understand the field
-   */
-  helperText?: string;
-  /**
-   * Give the user feedback on why their input is wrong
-   */ 
-  errorText?: string;
   /*
   * Specify the visual width of a given field
   */

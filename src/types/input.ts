@@ -46,4 +46,12 @@ export interface InputProps extends InteractiveProps {
     * Provide placeholder text for when no value is set. 
     */
     placeholderText?: string
+    /**
+    * Give the user information to understand the field
+    */
+    helperText?: string;
+    /**
+    * Give the user feedback on why their input is wrong
+    */ 
+    errorText?: string;
 }

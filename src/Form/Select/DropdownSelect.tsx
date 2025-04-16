@@ -5,6 +5,7 @@ import '../Form.css';
 import FormField from '../atoms/FormField';
 import {InputProps} from '../../types/input';
 import {default as Label} from '../atoms/Label';
+import { WidthSize } from '../atoms/WriteInField';
 
 type Option = {
   value: string;
@@ -16,11 +17,26 @@ type Option = {
 export interface SelectProps extends InputProps {
   options: Option[];
   multiple?: boolean;
+  size: WidthSize
 }
 
 const DropdownSelect = (props: SelectProps) => {
 
-  const {status, placeholderText, disabled, id, name, onChange, tabIndex, value, labelText, options, helperText, errorText, multiple} = props;
+  const {
+    placeholderText,
+    disabled,
+    id,
+    name,
+    onChange,
+    tabIndex,
+    value,
+    labelText,
+    options,
+    helperText,
+    errorText,
+    multiple,
+    size
+  } = props;
   
   return(
     <FormField
@@ -28,6 +44,7 @@ const DropdownSelect = (props: SelectProps) => {
         'Compact': true,
         'Disabled': disabled,
         'Error': status === 'error'
+        [`FieldWidth-${size || 'full'}`]: true
       })}
     >
       <Label labelText={labelText}/>
