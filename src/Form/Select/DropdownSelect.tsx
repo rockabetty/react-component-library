@@ -35,7 +35,8 @@ const DropdownSelect = (props: SelectProps) => {
     helperText,
     errorText,
     multiple,
-    size
+    size,
+    status
   } = props;
   
   return(
