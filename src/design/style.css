@@ -172,7 +172,7 @@
   --col-text-inverse: var(--color-text-inverse, var(--theme-interface-00));
 
   --col-background: var(--color-background, var(--theme-interface-00));
-  --col-backdrop: var(--color-backdrop, var(--theme-interface-90));
+  --col-backdrop: var(--color-backdrop, var(--theme-interface-10));
   --col-backdrop-inverse:  var(--color-backdrop-inverse, var(--theme-interface-90));
   --col-border: var(--color-border, var(--theme-interface-40));
   --col-shadow: var(--color-shadow, var(--swatch-black));

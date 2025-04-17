@@ -19,10 +19,6 @@ export interface ModalProps {
   */
   children: React.ReactNode
   /**
-   * Pass in a custom CSS class
-  */
-  classes?: string
-  /**
    * Accessibility-minded label for the close button. Default is "close".
   */
   closeButtonLabel?: string
@@ -141,7 +137,7 @@ const Modal = ({
       <dialog
         aria-hidden={!isOpen}
         aria-label={ariaLabel ? ariaLabel : heading || 'Modal'}
-        className={`modal ${classes} ${classNames({
+        className={`modal ${classNames({
           Open: isOpen,
           Closed: !isOpen,
           Alert: isAlert,
