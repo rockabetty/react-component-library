@@ -42,6 +42,7 @@
   display: block;
   border: 1px solid var(--col-border);
   background-color: var(--col-background);
+  border-radius: var(--border-radius);
 }
 .modal_content.Small {
   width: calc(var(--spacing-sm) * 25);
@@ -54,7 +55,7 @@
 }
 
 .modal_header {
-  display: flex;  
+  display: flex;
   font-weight: 700;
   align-items: center;
   padding: var(--spacing-md);
@@ -70,14 +71,15 @@
 
 .modal_body::-webkit-scrollbar {
   display: none;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .modal_footer {
   padding: var(--spacing-md);
   width: 100%;
   display: flex;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
   background-color: var(--col-background);
 }
 
@@ -89,5 +91,5 @@
   height: var(--spacing-lg);
   position: relative;
   margin-inline-start: var(--spacing-lg);
-  cursor:  pointer;
+  cursor: pointer;
 }
