@@ -18,7 +18,7 @@ export interface SelectProps extends InputProps {
   options: Option[];
   multiple?: boolean;
   size: WidthSize;
-  onMultiChange?: (selectedValues: string[]) => void;
+  onMultiChange?: (selectedValues: Set<string>) => void;
 }
 
 const DropdownSelect = (props: SelectProps) => {
@@ -40,8 +40,13 @@ const DropdownSelect = (props: SelectProps) => {
     status,
   } = props;
 
-  const [selectedValues, setSelectedValues] = useState<string[]>(
-    multiple && value ? (Array.isArray(value) ? value : [value]) : [],
+  // Managing internal state as a Set for multiple selections
+  const [selectedValues, setSelectedValues] = useState<Set<string>>(
+    multiple && value
+      ? value instanceof Set
+        ? value
+        : new Set(Array.isArray(value) ? value : [value])
+      : new Set(),
   );
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -50,9 +55,11 @@ const DropdownSelect = (props: SelectProps) => {
     );
 
     if (multiple) {
-      setSelectedValues(selectedOptions);
+      const newSelectedValues = new Set(selectedOptions);
+      setSelectedValues(newSelectedValues);
+
       if (onMultiChange) {
-        onMultiChange(selectedOptions);
+        onMultiChange(newSelectedValues);
       }
     } else {
       if (onChange) {
@@ -61,7 +68,8 @@ const DropdownSelect = (props: SelectProps) => {
     }
   };
 
-  const computedValue = multiple ? selectedValues : value;
+  // Ensure value prop works with both controlled and uncontrolled components
+  const computedValue = multiple ? Array.from(selectedValues) : value;
 
   return (
     <FormField
@@ -85,7 +93,7 @@ const DropdownSelect = (props: SelectProps) => {
         tabIndex={tabIndex}
         value={computedValue}
         multiple={multiple}
-        {...(multiple ? { size: Math.min(options.length, 5) } : {})} // Optional: show multiple options for multiselect
+        {...(multiple ? { size: Math.min(options.length, 5) } : {})}
       >
         {placeholderText && !multiple && (
           <option disabled value="">
